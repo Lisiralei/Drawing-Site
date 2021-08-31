@@ -1,2 +1,2 @@
 # Drawing-Site
-This site is a place for people to draw something as a group.
+This app is being made with intent for people to draw something as a group, spending time together.
