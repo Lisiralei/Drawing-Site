@@ -11,6 +11,11 @@ class TitleMixin:
     def get_title(self) -> str:
         return self.title
 
+    def get_context_data(self, **kwargs):
+        cxt = super().get_context_data()
+        cxt['title'] = self.get_title()
+        return cxt
+
 
 class UserMixin:
     username: str = None
@@ -20,12 +25,14 @@ class UserMixin:
             return self.username
         return 'unsigned user'
 
+    def get_context_data(self, **kwargs):
+        cxt = super().get_context_data()
+        cxt['username'] = self.get_username()
+        cxt
+        return cxt
+
 
 class HomepageView(TitleMixin, UserMixin, TemplateView):
     template_name = 'core/homepage.html'
     title = 'Homepage'
 
-    def get_context_data(self, **kwargs):
-        cxt = super().get_context_data()
-        cxt['username'] = self.get_username()
-        return cxt
