@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+                  rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <meta charset="UTF-8">
+
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        {% block content %}
+        {% include 'core/header.html' %}
+        <div class="container-fluid bg-light">
+        <form>
+          <div class="row mb-3 mt-3">
+            <label for="Login-input" class="col-sm-1 col-form-label">
+                Login
+            </label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="Login-input" aria-describedby="login-help" placeholder="Input your username or email address">
+            </div>
+          </div>
+          <div class="row mb-3">
+             <label for="InputPassword" class="col-sm-1 col-form-label">
+                 Password
+             </label>
+             <div class="col-sm-3">
+               <input type="password" class="form-control" id="InputPassword" placeholder="Input the password associated with your account">
+             </div>
+          </div>
+          <div class="col">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+          <button type="submit" class="btn btn-primary">
+              Sign in
+          </button>
+        </form>
+        </div>
+
+        {% endblock %}
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
